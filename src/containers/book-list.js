@@ -1,7 +1,8 @@
 /*
   A `container` is just a `Component` that has direct access to the 
   redux `state`. Containers are also known as `smart components`,
-  where other components are `dumb components`.
+  where other components are `dumb components` which do not speak to
+  redux.
  */
 
 import React, { Component } from 'react'
