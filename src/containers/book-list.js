@@ -3,6 +3,9 @@
   redux `state`. Containers are also known as `smart components`,
   where other components are `dumb components` which do not speak to
   redux.
+
+  BookList was premoted to a container because it has to be aware of
+  the application `state`.
  */
 
 import React, { Component } from 'react'
@@ -39,6 +42,10 @@ export class BookList extends Component {
 }
 
 // this function is the `glue` between React and React-Redux.
+// anytime the `state` changes, the `container` (component) will
+// re-render.
+// all properties on the returned object will be set as `props`
+// on the `container`.
 function mapStateToProps(state){
   // Whatever is returned will show up as `props` inside of BookList
   return {
