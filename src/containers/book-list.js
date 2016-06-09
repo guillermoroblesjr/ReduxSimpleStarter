@@ -10,6 +10,7 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+// action creator
 import { selectBook } from '../actions/index'
 // this makes sure that our actions flow automatically through all the
 // reducers
@@ -19,6 +20,10 @@ export class BookList extends Component {
 
   renderList(){
     return this.props.books.map(book => {
+
+      // selectBook() is an `action creator` that will create a
+      // a usable action. all the work for sending the action to
+      // all the reducers is done for us within mapDispatchToProps().
       return (
 
         <li 
@@ -57,7 +62,8 @@ function mapStateToProps(state){
 // BookList container
 function mapDispatchToProps(dispatch){
   // whenever `selectBook` is called, the result should be passed to
-  // all of our reducers
+  // all of our reducers.
+  // `selectBook` is the `action creator` imported at the top.
   return bindActionCreators({ selectBook: selectBook }, dispatch)
 }
 
