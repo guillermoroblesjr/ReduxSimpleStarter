@@ -20,7 +20,8 @@ class SearchBar extends Component {
   onFormSubmit(event) {
     event.preventDefault()
 
-    // fetch the weather data
+    // Fetch (via HTTP) the weather data by calling the 'featchWeather' 
+    // action creator.
     this.props.fetchWeather(this.state.term)
 
     // clear out the input box
